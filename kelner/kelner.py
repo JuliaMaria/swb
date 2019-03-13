@@ -1,5 +1,6 @@
  # init tables
-        positions = range(N)
+        from random import shuffle
+  positions = range(N)
         matrixFields = [[posX, posY] for posX in positions for posY in positions]
         shuffle(matrixFields)
 

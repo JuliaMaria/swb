@@ -1,0 +1,61 @@
+1)
+Z1 <- read.table('Z1.txt', header = TRUE)
+attach(Z1)
+Liczebnosc1 <- table(Wynik[Plec == 'dz' & Rok_ur == 1980])
+Procent1 <- prop.table(Liczebnosc1)
+3)
+load('Z3.RData')
+attach(Z3)
+t.test(Czas~Typ, mu = 0, var.equal = TRUE)
+5)
+load('Z5.RData')
+attach(Z5)
+analizaskupien <- hclust(dist(Z5), method = 'average')
+plot(analizaskupien, hang = -1)
+w <- rect.hclust(analizaskupien, k = 4)
+8)
+load('Z8.RData')
+attach(Z8)
+pca <- princomp(Z8)
+summary(pca)
+6)
+load('Z6.RData')
+attach(Z6)
+model <- lm(Wydatki~Dochody, data = Z6)
+nowy <- data.frame(Dochody=350)
+predict(model, nowy, interval = 'prediction')
+7)
+n.test <- function(x,sigmasquared.zero,alternative="two.sided") {
+  match.arg(alternative, choices = c("two.sided","less","greater"))
+  ssquared <- sum((x-mean(x))^2)/length(x)
+  statistic<-length(x)*ssquared/sigmasquared.zero
+
+  if(alternative=="two.sided"){
+    p.value=2*min(pchisq(statistic,length(x)-1),1-pchisq(statistic,length(x)-1))
+  } 
+  
+  if(alternative=="greater"){
+    p.value=pchisq(statistic,length(x)-1)
+  }
+  
+  if(alternative=="less"){
+    p.value=1-pchisq(statistic,length(x)-1)
+  }
+
+  names(statistic)<-"T"
+  parameter=length(x)-1
+  names(parameter)<-"num df"
+  method<-c("Test istotnosci dla wariancji w modelu normalnym")
+  data.name<-deparse(substitute(x))
+  
+  b<-list(statistic=statistic,parameter=parameter,p.value=p.value,alternative=alternative,method=method,data.name=data.name)
+  class(b)<-"htest"
+  return(b)
+}
+
+x<-c(2,3,45,66,7,7,324,234,5345,435,123)
+n<-n.test(x,0.001,"two.sided")
+print(n)
+
+
+

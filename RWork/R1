@@ -1,0 +1,50 @@
+1)
+x <- rep(c(TRUE, FALSE, TRUE, FALSE), c(3, 4, 2, 5))
+2)
+x <- c(1:1000)
+x[x %% 2 == 0] <- lapply(x[x %% 2 == 0], function(x) 1/x)
+3)
+a <- c(1:20)
+b <- seq(2, by = 2, length = 20)
+c <- seq(40, by = -2, length = 20)
+d <- c(20:1)
+e <- rep(0, 10)
+x <- c(a, e, b, c, e, d)
+4)
+MojaLista <- list(name = c('Julia', 'May'), pi = 3.14, vec = seq(0.02, 1, by = 0.02))
+5)
+months <- c('Styczen', 'Luty', 'Marzec', 'Kwiecien', 'Maj', 'Czerwiec', 'Lipiec', 'Sierpien', 'Wrzesien', 'Pazdziernik', 'Listopad', 'Grudzien')
+temps <- c(32, 33, 41, 52, 62, 72, 77, 75, 68, 58, 47, 35)
+d <- data.frame(temps)
+rownames(d) <- months
+colnames(d)[1] <- 'NY_F'
+
+d <- cbind(d, round((d$NY_F - 32) * 5 / 9, 2))
+colnames(d)[2] <- 'NY_C'
+
+setwd("/home/juliamaria/Desktop/RWork")
+save(d, file = 'Miasta.RData')
+6)
+d <- read.csv2('Cities.csv')
+d$MONTH <- c()
+
+ATLANTA_C <- (d$ATLANTA - 32) * 5 / 9
+PHOENIX_C <- (d$PHOENIX - 32) * 5 / 9
+SANDIEGO_C <- (d$SANDIEGO - 32) * 5 / 9
+
+d <- load('Miasta.RData')
+d <- cbind(d, round(ATLANTA_C, 2))
+d <- cbind(d, round(PHOENIX_C, 2))
+d <- cbind(d, round(SANDIEGO_C, 2))
+colnames(d)[3] <- 'ATLANTA_C'
+colnames(d)[4] <- 'PHOENIX_C'
+colnames(d)[5] <- 'SANDIEGO_C'
+
+d$NY_F <- c()
+
+colnames(d) <- c('Nowy York', 'Atlanta', 'Phoenix', 'San Diego')
+
+save(d, file = 'Miasta1.RData')
+
+matplot(d, type="b", lty=1:4, pch=1:14, col=c(1:4), xlab = 'Miesiac', ylab = 'Temperatura (w stopniach C)')
+legend("topleft", col=c(1:4), lty=1:4, pch=1:4, colnames(d))

@@ -1,0 +1,78 @@
+1)
+setwd("/home/juliamaria/Desktop/RWork")
+Ankieta <- read.table('Ankieta.txt', header=TRUE)
+attach(Ankieta)
+
+Liczebnosc1 <- table(WYNIK)
+Procent1 <- prop.table(Liczebnosc1)
+Liczebnosc2 <- table(WYNIK[Ankieta$SZKOLA=='p'])
+Procent2 <- round(prop.table(Liczebnosc2), 2)
+
+pie(Liczebnosc2, main = 'Podstawowe')
+Liczebnosc3 <- table(WYNIK[Ankieta$SZKOLA=='w'])
+pie(Liczebnosc3, main = 'Wyzsze')
+Liczebnosc4 <- table(WYNIK[Ankieta$SZKOLA=='s'])
+pie(Liczebnosc4, main = 'Srednie')
+
+Kobiety <- subset(Ankieta, Ankieta$PLEC=='k' & (Ankieta$SZKOLA=='s' | Ankieta$SZKOLA=='w'), select=c(PLEC,SZKOLA,WYNIK))
+
+library(car)
+recode(WYNIK, "c('a','b')='1';c('c','d')='2';c('e')='3'")
+
+Liczebnosc <- table(WYNIK, PLEC)
+Procent <- prop.table(Liczebnosc, 2) * 100
+barplot(Liczebnosc,
+       beside = TRUE,
+       col = 1:5,
+       ylab = '',
+       legend.text = c('a','b','c','d','e'))
+2)
+Liczebnosc <- table(Liczba)
+Procent <- prop.table(Liczebnosc) * 100
+Ocena <- cbind(Liczebnosc, Procent)
+O <- data.frame(Ocena)
+
+barplot(Liczebnosc,
+        col = 8,
+        main = 'Rozklad liczby zgloszen w centrali telefonicznej',
+        ylab = 'Liczba obserwacji',
+        xlab = 'Liczba zgloszen')
+
+B <- cbind(mean(Liczba), median(Liczba), sd(Liczba), sd(Liczba) / mean(Liczba))
+colnames(B) <- c('Srednia','Mediana','Odch.stand.','Wsp.zm.')
+3)
+Liczebnosc <- table(cut(Awarie[, 1], c(0, 500, 1000, 1500,2000,2500,3000,3500)))
+Procent <- round(prop.table(Liczebnosc), 2)
+X <- cbind(Liczebnosc, Procent)
+X1 <- data.frame(X)
+
+boxplot(Awarie[, 1],
+        main='Wykres ramkowy czasu bezawaryjnej pracy',
+        ylab='Czas bezawaryjnej pracy')
+
+library(e1071)
+A <- cbind(mean(Awarie[, 1]), median(Awarie[, 1]), sd(Awarie[, 1]), sd(Awarie[, 1]) / mean(Awarie[, 1]), skewness(Awarie[, 1]), kurtosis(Awarie[, 1]))
+colnames(A) <- c('Srednia','Mediana','Odch.stand.','Wsp.zm.','Wsp.as.','Wsp.konc.')
+4)
+Odmiana <- rep(c('Aster','Drop','Frezja','Irys','Ruta'), c(6,5,6,5,6))
+Plon <- c(168, 160, 169, 175, 159, 162,130, 136, 140, 137, 124,148, 149, 130, 139, 138, 140,126, 128, 131, 130, 127,145, 149, 148, 152, 150, 145)
+Dane <- data.frame(Plon, Odmiana)
+
+boxplot(Plon[Dane$Odmiana=='Aster'], Plon[Dane$Odmiana=='Drop'], Plon[Dane$Odmiana=='Frezja'], Plon[Dane$Odmiana=='Irys'], Plon[Dane$Odmiana=='Ruta'], main="Porównanie plennosci odmian ziemniaka", xlab="Odmiana", names=c('Aster','Drop','Frezja','Irys','Ruta'), ylab="Plon")
+5)
+wspolczynnik.zmiennosci <- function(x, na.rm=FALSE) {
+  if(na.rm==TRUE & is.numeric(x)){
+    p<-na.omit(x)
+    l<-sd(p)/mean(p)*100
+    return(l)
+  }
+  
+  if(is.numeric(x)) {
+    l<-sd(x)/mean(x)*100
+    return(l)
+    } 
+    else {
+      stop('argument nie jest wartoscia liczbowa')
+    }
+}
+

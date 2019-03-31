@@ -1,0 +1,30 @@
+1)
+USArrests
+pca <- princomp(USArrests)
+#Mamy tu 4 składowe główne
+
+summary(pca)
+#Te dwie składowe wyjaśniaja 99% zmienności
+
+plot(pca)
+#Pierwsza składowa wyjaśnia najbardziej zmienność
+2)
+analizaskupien <- hclust(dist(USArrests), method = 'complete')
+
+plot(analizaskupien, hang = -1)
+w <- rect.hclust(analizaskupien, k = 3)
+#Liczba skupien = 3
+
+analizaskupien <- hclust(dist(USArrests, method = 'manhattan'), method = 'average')
+plot(analizaskupien, hang = -1)
+w <- rect.hclust(analizaskupien, k = 3)
+#Wyniki nie zmieniły się istotnie
+3)
+library(MASS)
+attach(iris)
+lda <- lda(Species ~ ., data = iris)
+
+mean(predict(lda)$class != iris$Species)
+
+predict(lda, data.frame(Sepal.Length = 5.1, Sepal.Width = 3.5, Petal.Length = 1.3, Petal.Width = 0.3))
+#Do gantunku setosa z p=1

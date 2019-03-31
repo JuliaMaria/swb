@@ -1,0 +1,40 @@
+1)
+Szybkosc <- c(0.9, 6.2, 2.1 ,4.1, 7.3, 1.0, 4.6, 6.4, 3.8, 5.0, 2.7, 9.2, 5.9, 7.4, 3.0, 4.9, 8.2, 5.0, 1.2, 10.1, 12.2, 2.8, 5.9, 8.2, 0.5)
+sum((Szybkosc^2)/25)
+
+par.lambda <- function(x) {
+  b<-sum((x^2)/length(x))
+    return(b)
+}
+2)
+par.b <- function(x,y) {
+  b<-sum(y*x)/sum(x*x)
+  if(length(y)!=length(x))
+  stop("size of x must be equal to size of y")
+  else
+  return(b)
+}
+3)
+plot(cars)
+model <- lm(dist ~ speed, data = cars)
+plot(cars)
+Nie zamykac wykresu przed dodaniem dopasowania!!!
+abline(model, col = "black")
+
+summary(model)
+y = a + bx
+Estimate: speed:b, (Intercept):a
+Dopasowanie
+Multiple R-squared
+
+nowy <- data.frame(speed = 30:50)
+predict(model, nowy)
+4)
+model <- lm(Employed~GNP.deflator+GNP+Unemployed+Armed.Forces+Population+Year, data = longley)
+
+summary(model)
+Dopasowanie
+Adjusted R-squared
+
+Stymulanty: zmienne o dodatnich wspolczynnikach regresji
+Destymulanty: zmienne o ujemnych wspolczynnikach regresji

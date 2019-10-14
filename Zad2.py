@@ -1,8 +1,9 @@
 import re
 
-def validate(file):
+
+def validate(filename):
     pattern = re.compile("^(.+);([0-9]+);([0-9]+)$")
-    with open(file) as f:
+    with open(filename) as f:
         line = f.readline()
         while line:
             found = pattern.match(line.rstrip())
@@ -12,6 +13,7 @@ def validate(file):
                 print("Wrong formatting")
                 return
     print("Correct formatting")
+
 
 file = 'file.csv'
 validate(file)

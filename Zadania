@@ -7,7 +7,7 @@ sed -n 123p file.txt
 4)
 sed -n '10,20p;21q' file.txt
 5)
-
+egrep -o 'cz|sz' file.txt | wc -l
 6)
 cat file.txt | tr ąĄćĆęĘłŁńŃóÓśŚźŹżŻ X
 7)

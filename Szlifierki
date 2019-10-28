@@ -1,0 +1,31 @@
+import urllib.request
+from bs4 import BeautifulSoup
+
+product_names = []
+
+soup = BeautifulSoup(urllib.request.urlopen('https://www.ceneo.pl/Szlifierki_i_polerki/Rodzaj:Szlifierki_katowe.htm').read(), features='html.parser')
+
+page = 1
+a_tags = soup.findAll('a', attrs={'class': 'go-to-product js_conv js_clickHash js_seoUrl'})
+for i in range(len(a_tags)):
+    name = a_tags[i].getText().strip().upper()
+    product_names.append(name)
+
+print(page)
+
+next_url = soup.find('li', attrs={'class': 'page-arrow arrow-next'})
+while next_url:
+    url = 'https://www.ceneo.pl' + next_url.findChildren('a', recursive=False)[0]['href']
+    soup = BeautifulSoup(urllib.request.urlopen(url).read(), features='html.parser')
+    a_tags = soup.findAll('a', attrs={'class': 'go-to-product js_conv js_clickHash js_seoUrl'})
+    for i in range(len(a_tags)):
+        name = a_tags[i].getText().strip().upper()
+        product_names.append(name)
+
+    page += 1
+    print(page)
+
+    next_url = soup.find('li', attrs={'class': 'page-arrow arrow-next'})
+
+product_names = set(product_names)
+print(product_names)

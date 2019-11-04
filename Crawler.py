@@ -50,3 +50,4 @@ process = CrawlerProcess()
 process.crawl(Crawler)
 process.start()
 
+# https://resbazsql.github.io/lc-webscraping/05-scraping-multiple-pages-with-scrapy/

@@ -1,53 +1,55 @@
 import scrapy
-from scrapy.spiders import CrawlSpider, Rule
-from scrapy.linkextractors import LinkExtractor
+from scrapy.spiders import CrawlSpider
 from scrapy.crawler import CrawlerProcess
 from bs4 import BeautifulSoup
+import re
+from inscriptis import get_text
+import urllib
 
 
 def find_links(page):
     soup = BeautifulSoup(page, features='html.parser')
     links = []
     for a in soup.find_all('a', href=True):
-        if a['href'].endswith('.php'):
+        check1 = re.match(re.compile(r'^.*//'), a['href'])
+        check2 = re.match(re.compile(r'.+\.(doc|docx|ppt|pptx|tex|pdf)$'), a['href'])
+        if not check1 and not check2:
             links.append(a['href'])
     return links
 
 
 class Crawler(CrawlSpider):
     name = "Crawler"
-    BASE_URL = 'http://rjawor.home.amu.edu.pl'
     visited = []
 
-    rules = (Rule(LinkExtractor(), callback="parse_obj", follow=True),
-             )
+    def __init__(self, page, **kwargs):
+        self.url = page
+        super().__init__(**kwargs)
 
     def start_requests(self):
-
-        urls = [
-            'http://rjawor.home.amu.edu.pl',
-        ]
-
-        for url in urls:
-            yield scrapy.Request(url=url, callback=self.parse)
+        yield scrapy.Request(url=self.url, callback=self.parse)
 
     def parse(self, response):
         if response.url not in self.visited:
             page = response.url
-            print(page)
-            # filename = 'page-crawl-(%s).html' % page
             self.visited.append(response.url)
-            # with open(filename, 'w+') as f:
-            #     f.write(response.body)
 
-            for link in find_links(response.body):
-                absolute_url = self.BASE_URL + '/' + link
+            links = find_links(response.body)
+            html = urllib.request.urlopen(page).read().decode('utf-8')
+            text = get_text(html)
+
+            print('Page: {}'.format(page))
+            filename = 'crawl-{}.txt'.format(page.replace('/', ''))
+            with open(filename, 'w+') as file:
+                file.write(text)
+
+            for link in links:
+                link = link.strip('/')
+                absolute_url = self.url + '/' + link
                 yield scrapy.Request(absolute_url, callback=self.parse)
 
 
 process = CrawlerProcess()
 
-process.crawl(Crawler)
+process.crawl(Crawler, page='http://rjawor.home.amu.edu.pl')
 process.start()
-
-# https://resbazsql.github.io/lc-webscraping/05-scraping-multiple-pages-with-scrapy/

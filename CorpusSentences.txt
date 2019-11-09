@@ -1,0 +1,97 @@
+Jestem absolwentem Wydziału Matematyki i Informatyki Uniwersytetu im. Adama Mickiewicza oraz Studium Doktoranckiego tego wydziału.	I graduated from the Faculty of Mathematics and Computer Science of Adam Mickiewicz University in Poznań, Poland. ~~~  ~~~ I also graduated from PhD studies at this Faculty.	-0.117
+		0.3
+Posiadam stopień doktora nauk matematycznych w zakresie informatyki.	I have PhD degree in mathematics, specializing in computer science.	0.618079
+		0.3
+Obecnie jestem pracownikiem Wydziału na stanowisku adiunkta.	Currently I work at the Faculty at the position of Assisstant Professor.	0.261818
+		0.3
+Prowadzę zarówno pracę naukową, jak i dydaktyczną.	I conduct scientific research and teach classes.	0.286047
+		0.3
+Materiały do prowadzonych przeze mnie zajęć znajdują się w dziale "Dydaktyka".	Materials for my classes are available in the "Teaching" section.	0.509569
+		0.3
+W mojej pracy naukowej łączę informatykę z inną pasją - lingwistyką (mówię po angielsku, hiszpańsku, niemiecku, a także trochę po włosku).	In my scientific work I combine computer science with my other passion - linguistics (as a Polish native speaker I also speak English, Spanish, German and some Italian). ~~~ 	0.106112
+		0.3
+Jestem twórcą projektu Concordia - wyszukiwarki pełnotekstowej, przeznaczonej dla komputerowego wspomagania tłumaczenia.	I am the developer of the Concordia project - a full text search library best suited for Computer-Aided Translation.	0.728205
+		0.3
+Zapraszam na stronę projektu: http://tmconcordia.sourceforge.net/.	Be sure to visit its home page at: http://tmconcordia.sourceforge.net/	0.3
+		0.3
+Posiadam również wiele zainteresowań pozanaukowych.	I also have numerous other interests.	0.163636
+		0.3
+Można zapoznać się z nimi w dziale "Czas wolny".	You can read about them in the section "Relax".	0.5925
+		0.3
+W dziale "Kontakt" umieściłem natomiast moje informacje kontaktowe.	The section "Contact", on the other hand, contains my contact info.	0.284483
+		0.3
+Zapraszam do przeglądania strony!	Feel free to browse the page!	0.228
+		0.3
+Informatyka nie zajmuje całego mojego czasu - mam dużo zainteresowań pozanaukowych.	Computer science does not occupy my entire time - I have numerous other interests.	0.532857
+		0.3
+Nauka języków obcych - robię to dla czystej przyjemności rozmawiania z cudzoziemcami w ich własnym języku.	Learning foreign languages - I do it for the sheer pleasure of having a conversation with foreigners in their own language.	0.613811
+		0.3
+Muzyka - gra na gitarze (akustycznej, dwunastostrunowej) oraz słuchanie starego, dobrego rocka (ulubione zespoły: Led Zeppelin i Lady Pank).	Music - playing guitar (12-string accoustic) and listening to good old classic rock (Led Zeppelin, The Doors and Polish bands Lady Pank and Perfect).	0.590244
+		0.3
+Motoryzacja - kolekcjonowanie wszelkiej możliwej wiedzy na temat samochodów.	Cars - getting to know just about everything about cars.	0.46875
+		0.3
+Sport - jeżdżenie na rowerze (szosowym i górskim), bieganie, akrobatyka sportowa.	Sport - bike riding (mountain and road), running, sports acrobatics.	0.785455
+		0.3
+Stare gry telewizyjne - mam SNES (Super Nintendo Entertainment System) oraz prawdziwą legendę - PEGASUSa (potrafię m.in. przejść Contrę na jednym życiu, oraz całe Super Mario, bez używania skrótów).	Old video games - I still have SNES and the real legend: PEGASUS (I can, e.g. finish Contra on just one life or finish the entire Super Mario without using warp zones). ~~~  ~~~ Be sure to visit its home page at: http://tmconcordia.sourceforge.net/. ~~~  ~~~ Be sure to check my profile at Google Scholar.	-0.134348
+		0.3
+Można tam między innymi uzyskać poniższe dane w formacie BibTeX.	It provides, among others, the below data in BibTeX format.	0.543316
+		0.3
+Zapraszam również na mój profil ResearchGate.	You can also visit my profile at ResearchGate.	0.721071
+		0.3
+Proceedings of CBBLR 2016 Community-based Building of Language Resources, Brno, Czech Republic.	Proceedings of CBBLR 2016 Community-based Building of Language Resources, Brno, Czech Republic.	5.37692
+		0.3
+Text, Speech and Dialogue - Proceedings of 19th International Conference TSD 2016, Lecture Notes in Artificial Intelligence.	Text, Speech and Dialogue - Proceedings of 19th International Conference TSD 2016, Lecture Notes in Artificial Intelligence.	3.13333
+		0.3
+Polega na wyszukaniu w tekście niekoniecznie dokładnych wystąpień danego napisu.	Its task is to find in the text not necessarily exact matches of input pattern.	0.545455
+		0.3
+Technika ta znajduje szerokie zastosowanie wszędzie tam, gdzie zbiór danych do przeszukania może zawierać błędy.	The technique is applied whenever the searched resource might contain errors (e.g. OCR corpora).	0.246429
+		0.3
+Tłumaczenie przez analogie (ang. EBMT - Example Based Machine Translation) to tłumaczenie oparte na przykładach.	Example Based Machine Translation - my former main field of interest, subject of my Master's Thesis.	1.00465
+		0.3
+Zasada działania takiego tłumaczenia może być wyjaśniona następująco.	EBMT is translation based on analogy principle.	0.15
+		0.3
+Nazwijmy język, z którego tłumaczymy, językiem źródłowym, a język, na który tłumaczymy, językiem docelowym.	Its idea can be explained as follows.	-0.290625
+		0.3
+Niech zdanie w języku źródłowym nazywa się krótko zdaniem źródłowym, podczas gdy zdanie w języku docelowym - zdaniem docelowym.	Let the language from An example is a pair of sentences (in source and target language respectively) where the target sentence is a good translation of the source sentence.	0.354545
+		0.3
+Przykład to taka para: (zdanie źródłowe, zdanie docelowe), że zdanie docelowe jest tłumaczeniem zdania źródłowego (przy czym tłumaczenie to jest dobre, wykonane przez człowieka).	A large set of examples is called a translation memory.	-0.123017
+		0.3
+Zgromadźmy dużej wielkości zbiór przykładów i nazwijmy go pamięcią tłumaczeń.	EBMT of the input sentence is done by the following steps. 1.	0.194118
+		0.3
+Tłumaczenie przez analogie zdania wejściowego (zdania przeznaczonego do tłumaczenia) przebiega wtedy według następujących kroków.	Find an example in the translation memory whose source sentence is most similar to the input sentence.	0.396552
+		0.3
+Znajdź taki przykład w pamięci tłumaczeń, którego zdanie źródłowe jest najbardziej podobne do wejściowego.	As you can see, some of the above steps are non-trivial.	0
+		0.3
+Jak można zauważyć, wiele kroków tego algorytmu nie jest trywialnych.	What does it mean that to sentences are "similar", how to acquire translation memory and, most importantly, how to modify the example.	0.0393443
+		0.3
+Co znaczy, że zdania są "podobne", skąd wziąć pamięć tłumaczeń, czy, co najważniejsze, jak zmodyfikować przykład - tym wszystkim zajmuje się tłumaczenie przez analogie.	All of these problems are parts of EBMT.	-0.6
+		0.3
+Pozyskiwanie pamięci tłumaczeń - czynność pomocnicza, pozyskane pamięci tłumaczeń mogą służyć do tłumaczenia przez analogie, jak i do innych celów.	Parallel text corpora acquisition - auxiliary technique, acquired corpora can serve as translation memories for EBMT and for many other purposes.	0.578571
+		0.3
+Mieści się w nim opracowywanie narzędzi do automatycznego pozyskiwania tekstów z różnych źródeł, najczęściej dokumentów pozyskanych z Internetu lub w jakikolwiek inny sposób.	It consists in developing tools for automatic text extraction from documents acquired from the Internet or from any other source.	0.329344
+		0.3
+Podział tekstu na zdania - ang. Sensplitting.	Sentence splitting - or "Sensplitting".	0.766667
+		0.3
+Kolejna czynność pomocnicza, która, wbrew pozorom, nie jest trywialna.	Another auxiliary technique which, contrary to what you might think, is not trivial.	0.252381
+		0.3
+Zwróćmy uwagę, że algorytm dzielenia tekstu na zdania w miejscach kropek, wykrzykników i znaków zapytania jest mocno niewystarczający.	Let us point out that an algorithm for sentence splitting which splits the text in the place of full stops, exclamation marks and question marks is not sufficient.	0.40959
+		0.3
+Kropka jest bardzo często używana w skrótach, wypunktowaniach i innych częściach tekstu.	Dot sign is frequently used in abbreviations, enumerations and other parts of text.	0.736538
+		0.3
+Urównoleglanie tekstów - jeszcze inna czynność pomocnicza, służąca między innymi przygotowaniu pamięci tłumaczeń.	Text aligning - yet another auxiliary technique, used amon others to prepare translation memories.	0.458472
+		0.3
+Operacja jest wykonywana na dwóch tekstach w różnych językach.	Aligning is done on two texts in different languages, which are each others' translations.	0.474545
+		0.3
+Polega ona na dopasowaniu zdań obu tekstów w taki sposób, żeby dopasowane do siebie zdania były swoimi tłumaczeniami.	Its goal is to align the sentences of both texts in such a way that aligned sentences are each others' translations.	0.445524
+		0.3
+Operacja jest konieczna ze względu na to, że w praktyce tłumaczenie tekstu na inny język niemal nigdy nie ma takiej samej liczby zdań, jak tekst oryginalny.	This operation is necessary because in practice a translation of a text almost never contains the same number of sentences as the original.	0.389407
+		0.3
+Podczas dopasowywania często zdarza się, że dwa lub więcej zdań w jednym języku jest dopasowanych do jednego zdania w drugim języku.	During aligning it is not uncommon to have two or more sentences in one language aligned to only one sentence in the other languages.	0.567322
+		0.3
+Istnieje wiele algorytmów urównoleglania tekstów.	There are numerous text align algorithms.	0.227027
+		0.3
+Ze względu na naturę problemu, wszystkie są one dość mocno skomplikowane.	Regarding the nature of the problem, they are all quite complex.	0.250909
+		0.3
+Inżynieria oprogramowania - poza lingwistyką komputerową, w obszarze moich zainteresowań naukowych znajduje się inżynieria oprogramowania, czyli nauka o tym, jak wytwarzać dobre oprogramowanie.	Software engineering - apart from computational linguistics I am quite interested in software engineering, which put simply is knowledge of how to create good software.	0.494138
+		0.3
+Nauka ta jest mi przydatna ze względów praktycznych, stosuję ją zawsze, kiedy opracowuję nowy program lub rozwijam już istniejący.	This knowledge is very useful for me from practical point of view, I apply it whenever I design a new piece of software or develop existing.	0.292035
